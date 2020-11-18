@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
@@ -25,6 +25,13 @@ const CollectionOverViewContainer = () => (
     {({ loading, error, data }) => {
       console.log({ loading, error, data });
       if (loading) return <Spinner />;
+      if (error)
+        return (
+          <Fragment>
+            <h2>Some Went Wrong!</h2>
+            {error.message}
+          </Fragment>
+        );
       return <CollectionOverView collections={data.collections} />;
     }}
   </Query>
