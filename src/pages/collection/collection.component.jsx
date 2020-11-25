@@ -1,6 +1,6 @@
 import React from "react";
 
-import CollectionItem from "../../components/collection-item/collection-item.component";
+import CollectionItem from "../../components/collection-item/Collection-item.container";
 import "./collection.styles.scss";
 
 const CollectionPage = ({ collection }) => {

@@ -40,11 +40,10 @@ export const resolvers = {
       return !cartHidden;
     },
 
-    AddItemToCart: (_root, { item }, { cache }, _info) => {
+    addItemToCart: (_root, { item }, { cache }, _info) => {
       const { cartItems } = cache.readQuery({
         query: GET_CART_ITEMS
       });
-
       const newCartItems = addItemToCart(cartItems, item);
 
       cache.writeQuery({
